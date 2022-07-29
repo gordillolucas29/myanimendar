@@ -1,0 +1,106 @@
+			<!-- FORM BUTTONS YEAR SEASON -->
+			<div class="container-fluid d-flex justify-content-center align-items-center bg-dark p-3">
+				<form action="/" method="">
+					<div class="container">
+						<div class="input-group">
+							<select name="year" class="form-select" aria-label="Default select example">
+									<%	const date = new Date(); %>
+									<option selected disabled hidden>Year</option>
+									<option value='<%= date.getFullYear()%>'><%= date.getFullYear()%></option>
+									<option value='<%= date.getFullYear() -1%>'><%= date.getFullYear() -1%></option>
+									<option value='<%= date.getFullYear() -2%>'><%= date.getFullYear() -2%></option>
+									<option value='<%= date.getFullYear() -3%>'><%= date.getFullYear() -3%></option>
+								</select>
+								<select name="season" class="form-select"  aria-label="Default select example">
+									<option selected disabled hidden>Season</option>
+									<option value="winter">Winter</option>
+									<option value="spring">Spring</option>
+									<option value="summer">Summer</option>
+									<option value="fall">Fall</option>
+								</select>
+								<div id="media" class="btn-group" >
+									<button class="btn btn-secondary dropdown-toggle" style="--bs-btn-border-radius: 0" id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+										Media
+									</button>
+									<ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+										<li>
+											<div class="form-check ms-2">
+												<input name="media" class="form-check-input" type="checkbox" value="tv" id="flexCheckChecked" checked>
+												<label class="form-check-label" >
+													Tv 
+												</label>
+											</div>				
+										</li>
+										<li>
+											<div class="form-check ms-2">
+												<input name="media" class="form-check-input" type="checkbox" value="ova" id="flexCheckDefault" >
+												<label class="form-check-label">
+													Ova
+												</label>
+											</div>				
+										</li>
+										<li>
+											<div class="form-check ms-2">
+												<input name="media" class="form-check-input" type="checkbox" value="ona" id="flexCheckDefault" >
+												<label class="form-check-label" >
+													Ona
+												</label>
+											</div>				
+										</li>
+
+										<li>
+											<div class="form-check ms-2">
+												<input name="media" class="form-check-input" type="checkbox" value="movie" id="flexCheckDefault" >
+												<label class="form-check-label" >
+													Movie
+												</label>
+											</div>				
+										</li>
+										<li>
+											<div class="form-check ms-2">
+												<input name="media" class="form-check-input" type="checkbox" value="special" id="flexCheckDefault" >
+												<label class="form-check-label">
+													Special
+												</label>
+											</div>				
+										</li>
+										<li>
+											<div class="form-check ms-2">
+												<input name="media" class="form-check-input" type="checkbox" value="unknow" id="flexCheckDefault" >
+												<label class="form-check-label" >
+													Unknow
+												</label>
+											</div>				
+										</li>
+									</ul>
+								</div>
+								<div id="filters" class="btn-group" >
+									<button class="btn btn-secondary dropdown-toggle" style="--bs-btn-border-radius: 0" id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+										Filters
+									</button>
+									<ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+										<li>
+											<div class="form-check ms-2">
+												<input name="filters" class="form-check-input" type="checkbox" value="tvContinuingOn" id="flexCheckChecked" checked>
+												<label class="form-check-label" >
+													Tv (Continuing)
+												</label>
+											</div>				
+										</li>
+										<li><hr class="dropdown-divider"></li>
+
+										<li>
+											<div class="form-check ms-2">
+												<input name="filters" class="form-check-input checkbox-off" type="checkbox" value="kidsOff" id="flexCheckChecked" checked>
+												<label class=" form-check-label" >
+													Kids
+												</label>
+											</div>				
+										</li>
+									</ul>
+								</div>
+								<button type="submit" class="btn btn-secondary">Search</button>
+							</div>
+					</div>
+				</form>
+			</div>

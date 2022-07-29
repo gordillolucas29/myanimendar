@@ -1,0 +1,62 @@
+<div class="container">
+	<div class="row">
+		<% for (let i = 0; i< 7; i++){%>
+		<div class="col">
+			<div class="day text-center text-bg-dark p-2">
+				<h6 class="text-capitalize">
+					<%= days[i] %>
+				</h6>
+			</div>
+			<%= animeCard(days[i]) %>
+		</div>
+		<%}%>
+	</div>
+</div>
+		
+		
+<% function animeCard(day){%>
+	<% 	for (anime of animeSeason)  {%>
+		<% if(anime.broadcast.day_of_the_week == `${day}`){%>
+			<div class="card mb-3" data-bs-toggle="modal" data-bs-target="#id<%= anime.id %>">
+				<div class="anime-card">
+					<img src="<%= anime.main_picture.medium%>" class="card-img-top" alt="anime image">
+					<p class="fw-bold m-1 text-center" style="font-size: .8rem;"><%= anime.title %></p>
+				</div>
+				<div class="card-body" style="padding: 0;">
+
+					<!-- MODAL (MORE INFO) -->
+					<div class="modal fade" id="id<%= anime.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered">
+							<div class="modal-content">
+
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel"><%= anime.title %></h5><br>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+
+								<div class="modal-body ">
+									<h6 class="text-muted"><%= anime.alternative_titles.en %></h6>
+									<div class="container-fluid p-1 align-items-center justify-content-center d-flex" style="background: var(--bs-gray-100) ;">
+										<% 	for (genre in anime.genres) {%>
+												<span class="badge rounded-pill text-bg-secondary mx-1"><%= anime.genres[genre].name %></span>
+										<% } %>
+									</div>
+									<img src="<%= anime.main_picture.large%>" class="card-img-top" alt="anime image">
+									<div class="container my-3" style="height: 10rem; overflow-y: scroll;">
+											<h5>Synopsis:</h5>
+											<p><%= anime.synopsis %></p>
+									</div>
+
+								</div>
+								<div class="modal-footer ">
+									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<% } %>
+	<%}%>
+<%}%>

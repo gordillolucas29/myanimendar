@@ -1,0 +1,20 @@
+		<%- include('partials/head')%>
+	<body>
+		<div class="">
+			<%- include('partials/navigation')%>
+			<div id="Season-Year" class="container-fluid text-bg-dark text-center text-capitalize">
+				<h2 class="pb-2">
+					<%= season%>
+					<%= year%>
+				</h2>
+			</div>
+
+			<%- include('partials/anime.cards.ejs')%>
+
+		</div>
+		<%- include('partials/footer')%>
+		<%- include('partials/scripts')%>
+	</body>
+</html>
+
+ 
