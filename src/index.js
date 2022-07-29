@@ -9,7 +9,7 @@ const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // Settings
-app.set('port', '3000');
+app.set('port', '3000' || process.env.PORT);
 app.set('views', join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -30,6 +30,6 @@ app.use(function (req, res) {
 	res.status(404).render('404', { urlId: req.url });
 });
 
-app.listen(app.get(process.env.PORT || 'port'), () => {
-	console.log('server on port', app.get(process.env.PORT || 'port'));
+app.listen(app.get('port'), () => {
+	console.log('server on port', app.get('port'));
 });
