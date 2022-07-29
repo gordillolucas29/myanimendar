@@ -30,6 +30,6 @@ app.use(function (req, res) {
 	res.status(404).render('404', { urlId: req.url });
 });
 
-app.listen(app.get('port' || process.env.PORT), () => {
-	console.log('server on port', app.get('port' || process.env.PORT));
+app.listen(app.get(process.env.PORT || 'port'), () => {
+	console.log('server on port', app.get(process.env.PORT || 'port'));
 });
